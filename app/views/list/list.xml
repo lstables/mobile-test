@@ -1,0 +1,36 @@
+<Page loaded="loaded">
+    <Page.actionBar>
+        <ActionBar title="Contacts">
+            <ActionBar.actionItems>
+                <ActionItem text="Share" tap="share" ios.position="right" />
+            </ActionBar.actionItems>
+        </ActionBar>
+    </Page.actionBar>
+    <!--<GridLayout rows="auto, *" columns="2*, *">
+        <TextField id="grocery" text="{{ grocery }}" hint="Enter new contact name" row="0" col="0" />
+        <Button text="Add" tap="add" row="0" col="1" />
+        <ListView items="{{ groceryList }}" id="groceryList" row="1" colSpan="2">
+            <ListView.itemTemplate>
+                <GridLayout columns="*, auto">
+                    <Label text="{{ name }}"/>
+                    <Image src="res://ic_menu_delete" ios:visibility="collapsed" col="1" tap="delete" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>-->
+
+     <GridLayout rows="*,auto" style="margin-top: 10px;">
+        <ScrollView>
+            <Repeater items="{{ messages }}">
+                <Repeater.itemTemplate>
+                    <Label text="{{ name }}" class="{{ type == 1 ? 'message-left': 'message-right' }}" textWrap="true" />
+                </Repeater.itemTemplate>
+            </Repeater>
+        </ScrollView>
+
+        <!--<GridLayout columns="*,auto" row="1" >
+            <TextField hint="Send Message" text="{{ message }}" id="message" row="1"></TextField>
+            <Button text="Send" tap="sendMessage" row="1" col="1"></Button>
+        </GridLayout>-->
+    </GridLayout>
+</Page>
